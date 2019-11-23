@@ -1,0 +1,39 @@
+-enc=utf8      # 文字コードUTF-8(しかしwarning出る)
+-ole=unix      # 改行は LF
+-i=2           # インデントはスペース2つ
+-ci=2          # 長い行を途中で改行した時のインデント
+-l=100         # 1行の長さが100文字以内に収まるようにする
+--check-syntax # 整形後 perl -c -T でチェック
+
+# code indentation control
+--closing-token-indentation=0 # 配列指定時などに、終了カッコを開始と同じ位置までインデント
+--nooutdent-long-quotes       # インデントされ過ぎた文字列があっても引き戻して来ない
+--nooutdent-long-lines        # インデントされ過ぎた行があっても引き戻して来ない
+
+# whitespace control
+--nospace-for-semicolon      # forループの指定のセミコロンの前にスペースを置かない
+--nospace-terminal-semicolon # セミコロンの前にスペースを置かない
+--add-semicolons             # 行末にセミコロンを置き、次の行に終わりの中括弧を置く
+--tight-secret-operators     # 0+$val などの特定の表現のときは 0 + $val の様なスペースを空けない
+--paren-tightness=1          # 括弧の中のスペースは開けない (1と2かで悩ましい)
+
+# comment control
+--minimum-space-to-comment=1 # 行末コメントとコードの間のスペースは2つ
+
+# line break control
+--opening-brace-always-on-right # 開き括弧は必ず右端に置く
+--opening-token-right
+
+# controlling list formatting
+--comma-arrow-breakpoints=0  # => で強制改行
+--maximum-fields-per-table=1 # 配列要素の指定を横に並べる数
+
+# brank line control
+--keep-old-blank-lines=2 # 過去の空白行を消さない
+
+--break-at-old-method-breakpoints # たぶんメソッドチェーンのインデント保持する奴
+
+# ({}) みたいな時にいちいち連続で改行しなくなる
+--stack-opening-tokens
+--stack-closing-tokens
+--weld-nested-containers
